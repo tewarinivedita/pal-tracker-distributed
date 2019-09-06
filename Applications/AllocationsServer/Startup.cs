@@ -33,8 +33,8 @@ namespace AllocationsServer
 
             services.AddSingleton<IProjectClient>(sp =>
             {
-               var handler = new DiscoveryHttpClientHandler(sp.GetService<IDiscoveryClient>());
-              var httpClient = new HttpClient(handler, false)
+                var handler = new DiscoveryHttpClientHandler(sp.GetService<IDiscoveryClient>());
+                var httpClient = new HttpClient(handler, false)
                 {
                     BaseAddress = new Uri(Configuration.GetValue<string>("REGISTRATION_SERVER_ENDPOINT"))
                 };
@@ -48,8 +48,8 @@ namespace AllocationsServer
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
             app.UseMvc();
+            app.UseDiscoveryClient();
         }
     }
 }
