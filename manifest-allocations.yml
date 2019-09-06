@@ -7,6 +7,6 @@ applications:
   - route: allocations-pal-INITIALS.apps.pikes.pal.pivotal.io
   path: Applications/AllocationsServer/bin/Release/netcoreapp2.1/publish
   env:
-    REGISTRATION_SERVER_ENDPOINT: http://FILL_ME_IN/
+    REGISTRATION_SERVER_ENDPOINT: https://registration-pal-arijit.cfapps.io
   services:
   - tracker-allocations-database
